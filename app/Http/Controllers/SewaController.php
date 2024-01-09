@@ -37,9 +37,11 @@ class SewaController extends Controller
         return redirect('sewa');
     }
 
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $row = Sewa::findOrFail($id);
+
+        return view('sewa.show', compact('row'));
     }
 
     public function edit(string $id)

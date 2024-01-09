@@ -6,13 +6,13 @@
     <h3 class="card-header py-3">Data User</h3>
     <div class="card-body">
 
-    <table class="table table-striped table-bordered" id="dtb">
+    <table class="table table-striped table-bordered table-fluid" id="dtb">
     <thead>
         <tr>
             <th>NO</th>
             <th>NAMA</th>
             <th>EMAIL</th>
-            <th>HAPUS</th>
+            <th>AKSI</th>
         </tr>
     </thead>
     <tbody>

@@ -27,6 +27,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/sewa', [SewaController::class, 'index']);
 Route::get('/sewa/create', [SewaController::class, 'create']);
 Route::post('/sewa', [SewaController::class, 'store']);
+Route::get('/sewa/show/{id}', [SewaController::class, 'show']);
 Route::get('/sewa/edit/{id}', [SewaController::class, 'edit']);
 Route::patch('/sewa/{id}', [SewaController::class, 'update']);
 Route::delete('/sewa/{id}', [SewaController::class, 'destroy']);

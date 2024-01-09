@@ -17,15 +17,14 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+        <nav class="navbar navbar-expand-md navbar-success bg-white shadow-sm fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">KOST</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -55,7 +54,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/home') }}">Home</a>
+                                <a class="nav-link" href="{{ url('/home') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/categories') }}">Jenis Kost</a>
@@ -89,12 +88,34 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 mt-5">
             <div class="container">
                 @yield('content')
             </div>
         </main>
     </div>
+
+    <footer class="main-footer">
+    <strong>Copyright &copy; 2024 <a href="https://github.com/YOULLOGIC">Wahyu Putra Prayuda</a>.</strong>
+    All rights reserved.
+  </footer>
+
+  <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Script for Search Functionality -->
+<script>
+    $(document).ready(function () {
+        $("#searchInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#dtb tbody tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
+
+
 </body>
 
 </html>

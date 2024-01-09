@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sewa;
+use App\Models\User;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $totalPelanggan = Sewa::count();
+        $totalUsers     = User::count();
+        $totalJenisKost = Category::count();
+
+        return view ('home', compact('totalPelanggan', 'totalUsers', 'totalJenisKost'));
     }
+
+    public function dashboard(){
+        
+        return view ('dashboard'); 
+    }
+    
 }
